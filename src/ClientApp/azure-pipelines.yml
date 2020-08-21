@@ -102,4 +102,4 @@ stages:
               liveVersion=$(curl --fail --silent "https://$(azureCndEndpointHost)/semver.txt")
               [[ $liveVersion == $(releaseSemVer) ]] && echo -e "\033[1;32m## [Passed] website validation Ok: $liveVersion is live now\033[0m" || >&2 echo -e "\033[0;31m## [Fail] website validation Fail: expected $(releaseSemVer) - actual $liveVersion\033[0m"
             displayName: 'validate website version'
-            failOnStderr: true
+            failOnStderr: false
